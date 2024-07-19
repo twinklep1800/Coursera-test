@@ -1,18 +1,14 @@
-<!-- HTML -->
 <!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="styles.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Our menu</title>
-	<style>
-		/*global styles*/
-		* {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css" />
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+	padding: 0;
+}
 		body {
 			font-family:  Cursive, sans-serif;
 		}
@@ -22,65 +18,91 @@
 			font-size: 2em;
 		}
 		.section {
-			position: absolute;
-			width: 33.33%;
-			padding: 20px;
+		  top: 10px;
+			right: 10px;
 			background-color: yellow;
+			padding: 5px 10px;
 			border: 1px solid black;
-			margin: 0 10px 10px;
-			position: relative;
+			font-size: 1.25em
 		}
-		.section-title {
-			position: absolute;
+		.section-title{
+		  text-align: right;
+		
 			top: 10px;
 			right: 10px;
 			background-color: green;
 			padding: 5px 10px;
 			border: 1px solid black;
 			font-size: 1.25em;
-		}
-		p {
-			line-height: 1.5;
-		}
-		 /*media queries for responsive design*/
+			
+  
+} 
+		
+		
+/* Create equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 20px;
+}
 
-		 /* tablet view*/ (768px - 991px)
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+  /* tablet view*/ 
 @media screen and (min-width: 768px) and (max-width 991px){
 .section{
 	width: 48%; /* two sections per row */
 }
  .section: nth-child(3) {
  	width: 100%; /* third section takes full width on second row */
-margin-top: 20px;
+margin-top: 50px;
  }
 }
 
-/*mobile view (less than or equal to 767px)*/
-@media screen and (max-width: 767px){
-	.section {
-		width: 100%; /*each section takes full width on its own row */
-	}
+/* Mobile view */
+@media screen and (max-width: 767px) {
+  .column {
+    width: 100%;
+  }
 }
-}
-
 </style>
 </head>
 <body>
-	<h1> delicious menu</h1>
-	<div class="container">
-	  <section>
+
+<h2>Our Menu</h2>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+     <section>
 	<section class="section">
 		 <div class="section-title">Pasta </div>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec diam dui. Donec rutrum congue leo eget malesuada. Nulla facilisi eros in maximus aliquam. Sed vehicula tortor mauris, non congue est vestibulum eget.</p>
-  </section>
-  <section class="section">
-     <div class="section-title">Chicken </div>
-    <p>Lorem ipsum dolor sit amet, culpa perferendis enim, consequatur obcaecati iusto! Quia aliquam, obcaecati explicabo adipisci non.</p>
-  </section>
-  <section class="section">
-    <div class="section-title">Potato </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa perferendis enim, consequatur obcaecati iusto! Quia aliquam, obcaecati explicabo adipisci non.</p>
-  </section>
+   </div>
+  <div class="column" style="background-color:#bbb;">
+     <section>
+	<section class="section">
+		 <div class="section-title">Chicken </div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec diam dui. Donec rutrum congue leo eget malesuada. Nulla facilisi eros in maximus aliquam. Sed vehicula tortor mauris, non congue est vestibulum eget.</p>
   </div>
+  
+  <div class="column" style="background-color:#ccc;">
+    
+     <section>
+	<section class="section">
+		 <div class="section-title">Fish </div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec diam dui. Donec rutrum congue leo eget malesuada. Nulla facilisi eros in maximus aliquam. Sed vehicula tortor mauris, non congue est vestibulum eget.</p>
+  </div>
+</div>
+
 </body>
 </html>
